@@ -5,8 +5,8 @@
 var volNum = document.getElementById("volume-number");
 var volSli = document.getElementById("volume-slider");
 
-volNum.addEventListener("change", sliToNum);
-volSli.addEventListener("change", numToSli);
+volNum.addEventListener("input", sliToNum);
+volSli.addEventListener("input", numToSli);
 
 function numToSli() {
     volNum.value = volSli.value;
@@ -76,8 +76,8 @@ function hornParty() {
 
 button.addEventListener("click", honk());
 
-function honk(evt) {
-    evt.preventDefault();
+function honk(event) {
+    event.preventDefault();
     horn.play();
 }
 
