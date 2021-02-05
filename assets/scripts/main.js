@@ -74,7 +74,7 @@ function hornParty() {
     horn.src = "./assets/media/audio/party-horn.mp3";
 }
 
-button.addEventListener("click", honk());
+button.addEventListener("click", honk);
 
 function honk(event) {
     event.preventDefault();
