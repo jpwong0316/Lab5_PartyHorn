@@ -53,8 +53,8 @@ var radioAir = document.getElementById("radio-air-horn");
 var radioCar = document.getElementById("radio-car-horn");
 var radioParty = document.getElementById("radio-party-horn");
 radioAir.addEventListener("click", hornAir);
-radioAir.addEventListener("click", hornCar);
-radioAir.addEventListener("click", hornParty);
+radioCar.addEventListener("click", hornCar);
+radioParty.addEventListener("click", hornParty);
 
 function hornAir() {
     sndImg.src = "./assets/media/images/air-horn.svg";
@@ -92,9 +92,9 @@ function hornParty() {
     }
 }*/
 
-button.addEventListener("click", honk);
+button.addEventListener("click", honk(evt));
 
-function honk() {
+function honk(evt) {
     evt.preventDefault();
     horn.play();
 }
