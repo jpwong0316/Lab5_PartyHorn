@@ -63,7 +63,7 @@ function hornAir() {
 }
 
 function hornCar() {
-    sndImg.src = "./assets/media/images/car-horn.svg";
+    sndImg.src = "./assets/media/images/car.svg";
     sndImg.alt = "Car Horn";
     horn.src = "./assets/media/audio/car-horn.mp3";
 }
@@ -74,25 +74,7 @@ function hornParty() {
     horn.src = "./assets/media/audio/party-horn.mp3";
 }
 
-/*function changeHorn() {
-    if (radio[0].checked) {
-        sndImg.src = "./assets/media/images/air-horn.svg";
-        sndImg.alt = "Air Horn";
-        horn.src = "./assets/media/audio/air-horn.mp3";
-    }
-    else if (radio[1].checked) {
-        sndImg.src = "./assets/media/images/car.svg";
-        sndImg.alt = "Car Horn";
-        horn.src = "./assets/media/audio/car-horn.mp3";
-    }
-    else if (radio[2].checked) {
-        sndImg.src = "./assets/media/images/party-horn.svg";        
-        sndImg.alt = "Party Horn";
-        horn.src = "./assets/media/audio/party-horn.mp3";
-    }
-}*/
-
-button.addEventListener("click", honk(evt));
+button.addEventListener("click", honk());
 
 function honk(evt) {
     evt.preventDefault();
