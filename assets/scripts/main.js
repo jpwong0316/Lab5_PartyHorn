@@ -11,17 +11,19 @@ volSli.addEventListener("change", numToSli);
 function numToSli() {
     volNum.value = volSli.value;
     horn.volume = volNum.valueAsNumber/100;
+    changeIcon();
 }
 function sliToNum() {
     volSli.value = volNum.value;
     horn.volume = volSli.valueAsNumber/100;
+    changeIcon()
 }
 
 var horn = document.getElementById("horn-sound");
 
 var icon = document.getElementById("volume-image");
 var button = document.getElementById("honk-btn");
-horn.addEventListener("volume-change", changeIcon);
+//horn.addEventListener("volume-change", changeIcon);
 
 function changeIcon() {
     if (volNum.valueAsNumber <= 100 && volNum.valueAsNumber >= 67) {
@@ -51,17 +53,17 @@ var radio = document.getElementsByName("radio-sound");
 radio.addEventListener("change", changeHorn);
 
 function changeHorn() {
-    if (radio[0].checked == true) {
+    if (radio[0].checked) {
         sndImg.src = "./assets/media/images/air-horn.svg";
         sndImg.alt = "Air Horn";
         horn.src = "./assets/media/audio/air-horn.mp3";
     }
-    else if (radio[1].checked == true) {
+    else if (radio[1].checked) {
         sndImg.src = "./assets/media/images/car.svg";
         sndImg.alt = "Car Horn";
         horn.src = "./assets/media/audio/car-horn.mp3";
     }
-    else if (radio[2].checked == true) {
+    else if (radio[2].checked) {
         sndImg.src = "./assets/media/images/party-horn.svg";        
         sndImg.alt = "Party Horn";
         horn.src = "./assets/media/audio/party-horn.mp3";
@@ -72,6 +74,7 @@ button.addEventListener("click", honk);
 
 function honk() {
     horn.play();
+    evt.preventDefault();
 }
 
 
