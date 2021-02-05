@@ -49,10 +49,32 @@ function changeIcon() {
 }
 
 var sndImg = document.getElementById("sound-image");
-var radio = document.getElementsByName("radio-sound");
-radio.addEventListener("change", changeHorn);
+var radioAir = document.getElementById("radio-air-horn");
+var radioCar = document.getElementById("radio-car-horn");
+var radioParty = document.getElementById("radio-party-horn");
+radioAir.addEventListener("click", hornAir);
+radioAir.addEventListener("click", hornCar);
+radioAir.addEventListener("click", hornParty);
 
-function changeHorn() {
+function hornAir() {
+    sndImg.src = "./assets/media/images/air-horn.svg";
+    sndImg.alt = "Air Horn";
+    horn.src = "./assets/media/audio/air-horn.mp3";
+}
+
+function hornCar() {
+    sndImg.src = "./assets/media/images/car-horn.svg";
+    sndImg.alt = "Car Horn";
+    horn.src = "./assets/media/audio/car-horn.mp3";
+}
+
+function hornParty() {
+    sndImg.src = "./assets/media/images/party-horn.svg";
+    sndImg.alt = "Party Horn";
+    horn.src = "./assets/media/audio/party-horn.mp3";
+}
+
+/*function changeHorn() {
     if (radio[0].checked) {
         sndImg.src = "./assets/media/images/air-horn.svg";
         sndImg.alt = "Air Horn";
@@ -68,13 +90,13 @@ function changeHorn() {
         sndImg.alt = "Party Horn";
         horn.src = "./assets/media/audio/party-horn.mp3";
     }
-}
+}*/
 
 button.addEventListener("click", honk);
 
 function honk() {
-    horn.play();
     evt.preventDefault();
+    horn.play();
 }
 
 
